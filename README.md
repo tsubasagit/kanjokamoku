@@ -1,5 +1,11 @@
 # kanjokamoku (勘定科目)
 
+<p align="center">
+  <img src="docs/rapid-kun.png" width="120" alt="ラピットくん — kanjokamoku mascot">
+  <br>
+  <em>「まずは仕訳してみよう！」— ラピットくん</em>
+</p>
+
 **Open-source Japanese chart of accounts & auto-classification rules for accounting automation.**
 
 **日本の勘定科目マスタと自動仕訳判定ルールのOSSライブラリ。**
