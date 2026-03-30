@@ -20,7 +20,11 @@
     "tax",
     "auto-classification",
     "中小企業",
-    "consumption-tax"
+    "consumption-tax",
+    "freee",
+    "弥生",
+    "TKC",
+    "moneyforward"
   ],
   "author": "AppTalentHub Inc.",
   "license": "MIT",
