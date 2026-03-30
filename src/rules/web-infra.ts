@@ -20,6 +20,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "GMOインターネット ドメイン登録",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ムームードメイン",
@@ -31,6 +33,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "GMOペパボ ドメイン登録",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "スタードメイン",
@@ -42,6 +46,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "ネットオウル ドメイン登録",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Google Domains",
@@ -53,6 +59,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Squarespace Domainsに移管済み",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Gandi",
@@ -64,6 +72,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Gandi.net ドメイン登録",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── CDN ──
@@ -77,6 +87,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "CDN / DNS / セキュリティ",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Akamai",
@@ -87,6 +99,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Fastly",
@@ -97,6 +111,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Amazon CloudFront",
@@ -108,6 +124,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "AWS CloudFront CDN",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── SSL証明書 ──
@@ -121,6 +139,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "SSL/TLS証明書",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "DigiCert",
@@ -132,6 +152,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "SSL/TLS証明書",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Let's Encrypt",
@@ -143,6 +165,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "無料SSL — 寄付の場合あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── Webサイトビルダー ──
@@ -156,6 +180,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Wix.com Webサイトビルダー",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Jimdo",
@@ -166,6 +192,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Squarespace",
@@ -176,6 +204,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "BASE",
@@ -187,6 +217,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.75,
     note: "BASEネットショップ — 短い名称のため exact match",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "STORES",
@@ -198,6 +230,8 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "STORES.jp ネットショップ/決済",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Shopify",
@@ -209,5 +243,7 @@ export const WEB_INFRA_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "ECプラットフォーム",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

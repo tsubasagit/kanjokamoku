@@ -21,7 +21,9 @@ export {
   TAX_FEE_RULES, MAINTENANCE_RULES, LEASING_RULES,
   CONVENIENCE_RULES, SUBSCRIPTION_RULES, WELFARE_RULES,
 } from "./rules/index";
-export type { ClassificationRule } from "./rules/index";
+export type { ClassificationRule, ConsumptionTaxClass, WithholdingInfo } from "./rules/index";
 
 export { classify } from "./classify";
 export type { ClassificationResult } from "./classify";
+
+export { TAX_CONSTANTS } from "./tax-constants";

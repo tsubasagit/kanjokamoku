@@ -21,6 +21,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "業務利用の場合のみ経費計上可",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Amazon Prime",
@@ -32,6 +34,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "配送特典含むため按分が必要な場合あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Disney+",
@@ -43,6 +47,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "業務利用の場合のみ経費計上可",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Hulu",
@@ -54,6 +60,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "業務利用の場合のみ経費計上可",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "U-NEXT",
@@ -65,6 +73,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "業務利用の場合のみ経費計上可",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "DAZN",
@@ -76,6 +86,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "スポーツ配信 — 業務利用の場合のみ経費計上可",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ABEMA",
@@ -87,6 +99,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "ABEMAプレミアム",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "WOWOW",
@@ -97,6 +111,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "dTV",
@@ -108,6 +124,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "NTTドコモ Lemino（旧dTV）",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Paravi",
@@ -119,6 +137,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "U-NEXTに統合済み",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Apple TV+",
@@ -130,6 +150,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Apple TV+ サブスクリプション",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 音楽配信 → 通信費(512) ──
@@ -142,6 +164,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Apple Music",
@@ -152,6 +176,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Amazon Music",
@@ -162,6 +188,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "YouTube Music",
@@ -172,6 +200,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "LINE MUSIC",
@@ -182,6 +212,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "AWA",
@@ -193,6 +225,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "AWA音楽配信 — 短い名称のため exact match",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── ストレージ → 通信費(512) ──
@@ -206,6 +240,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "iCloud+ ストレージプラン",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Google One",
@@ -217,6 +253,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Google Oneストレージプラン",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── ニュース系 → 新聞図書費(516) ──
@@ -230,6 +268,9 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "経済ニュースメディア定期購読",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["電子版のみの購読は軽減税率の対象外。標準税率10%"],
   },
   {
     name: "日経電子版（定期購読）",
@@ -241,5 +282,8 @@ export const SUBSCRIPTION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "日本経済新聞デジタル版定期購読",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["電子版のみの購読は軽減税率の対象外。標準税率10%"],
   },
 ];

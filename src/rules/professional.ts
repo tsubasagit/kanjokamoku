@@ -21,6 +21,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "源泉徴収の対象",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
   {
     name: "司法書士",
@@ -32,6 +35,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "登記手続き等 — 源泉徴収の対象",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号。1回の支払額から1万円を控除した残額に対して源泉徴収" },
   },
   {
     name: "行政書士",
@@ -42,6 +48,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: false, basis: "行政書士報酬は源泉徴収不要（所得税法204条の対象外）" },
   },
   {
     name: "弁理士",
@@ -53,6 +62,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "特許・商標出願 — 源泉徴収の対象",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
   {
     name: "法律事務所",
@@ -63,6 +75,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
   {
     name: "法務事務所",
@@ -73,6 +88,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
 
   // ── 会計系 → 支払手数料(517) ──
@@ -86,6 +104,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "源泉徴収の対象",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
   {
     name: "公認会計士",
@@ -97,6 +118,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "源泉徴収の対象",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
   {
     name: "税理士事務所",
@@ -107,6 +131,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
   {
     name: "会計事務所",
@@ -117,6 +144,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
   {
     name: "記帳代行",
@@ -127,6 +157,8 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 労務系 → 支払手数料(517) ──
@@ -140,6 +172,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "源泉徴収の対象",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
   {
     name: "社労士",
@@ -151,6 +186,9 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "社会保険労務士の略称",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項2号" },
   },
 
   // ── コンサルティング → 外注費(518) ──
@@ -163,6 +201,8 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "コンサルタント",
@@ -173,6 +213,8 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "アドバイザリー",
@@ -183,6 +225,8 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 制作外注 → 外注費(518) ──
@@ -196,6 +240,10 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.8,
     note: "フリーランスデザイナーへの外注",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項1号（原稿料・デザイン料等）" },
+    taxNotes: ["個人への支払いの場合のみ源泉徴収が必要。法人取引の場合は不要"],
   },
   {
     name: "イラストレーター",
@@ -207,6 +255,10 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.8,
     note: "フリーランスイラストレーターへの外注",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項1号（原稿料・デザイン料等）" },
+    taxNotes: ["個人への支払いの場合のみ源泉徴収が必要。法人取引の場合は不要"],
   },
   {
     name: "カメラマン",
@@ -218,6 +270,10 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.85,
     note: "撮影外注",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項1号（原稿料・デザイン料等）" },
+    taxNotes: ["個人への支払いの場合のみ源泉徴収が必要。法人取引の場合は不要"],
   },
   {
     name: "ライター",
@@ -229,6 +285,10 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.8,
     note: "記事執筆外注",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項1号（原稿料・デザイン料等）" },
+    taxNotes: ["個人への支払いの場合のみ源泉徴収が必要。法人取引の場合は不要"],
   },
   {
     name: "翻訳",
@@ -239,6 +299,10 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    withholding: { required: true, rate: 10.21, basis: "所得税法204条1項1号（原稿料・デザイン料等）" },
+    taxNotes: ["個人への支払いの場合のみ源泉徴収が必要。法人取引の場合は不要"],
   },
   {
     name: "Web制作",
@@ -249,6 +313,8 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "システム開発",
@@ -259,5 +325,7 @@ export const PROFESSIONAL_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

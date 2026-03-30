@@ -20,6 +20,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "JR各社共通パターン",
   },
   {
@@ -31,6 +33,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "JR西日本",
@@ -41,6 +45,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "JR東海",
@@ -51,6 +57,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "新幹線",
@@ -61,6 +69,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "EX-IC等のクレカ決済が一般的",
   },
 
@@ -74,6 +84,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "小田急",
@@ -84,6 +96,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "京王",
@@ -94,6 +108,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "西武",
@@ -104,6 +120,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.8,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "西武鉄道 — 西武百貨店等と区別が必要",
   },
   {
@@ -115,6 +133,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.8,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "東武鉄道 — 東武百貨店等と区別が必要",
   },
   {
@@ -126,6 +146,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "相鉄",
@@ -136,6 +158,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "京成",
@@ -146,6 +170,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "阪急",
@@ -156,6 +182,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "阪神",
@@ -166,6 +194,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.8,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "阪神電鉄 — 阪神百貨店等と区別が必要",
   },
   {
@@ -177,6 +207,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "南海",
@@ -187,6 +219,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.8,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "南海電鉄",
   },
   {
@@ -198,6 +232,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "西鉄",
@@ -208,6 +244,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── IC cards ──
@@ -220,6 +258,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "チャージ時の仕訳",
   },
   {
@@ -231,6 +271,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "チャージ時の仕訳",
   },
   {
@@ -242,6 +284,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "チャージ時の仕訳",
   },
   {
@@ -253,6 +297,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "チャージ時の仕訳",
   },
 
@@ -266,6 +312,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "タクシー大手",
   },
   {
@@ -277,6 +325,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "GO(タクシー)",
@@ -287,6 +337,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "タクシー配車アプリ GO",
   },
   {
@@ -298,6 +350,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "DiDi タクシー配車",
   },
   {
@@ -309,6 +363,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "ソニー系タクシー配車アプリ",
   },
 
@@ -322,6 +378,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "Uber Taxi — Uber Eats は別勘定",
   },
 
@@ -335,6 +393,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "JAL",
@@ -345,6 +405,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Peach",
@@ -355,6 +417,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.8,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "Peach Aviation — LCC",
   },
   {
@@ -366,6 +430,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "ジェットスター — LCC",
   },
   {
@@ -377,6 +443,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "スターフライヤー",
@@ -387,6 +455,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ソラシドエア",
@@ -397,6 +467,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── Gas stations ──
@@ -409,6 +481,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "車両燃料費 — 車両費として分類する場合もあり",
   },
   {
@@ -420,6 +494,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "出光興産",
   },
   {
@@ -431,6 +507,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.8,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "コスモ石油",
   },
   {
@@ -442,6 +520,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "出光昭和シェル",
   },
   {
@@ -453,6 +533,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "キグナス石油",
   },
   {
@@ -464,6 +546,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "apollostation",
@@ -474,6 +558,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "出光興産の新ブランド",
   },
 
@@ -487,6 +573,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "タイムズ駐車場",
   },
   {
@@ -498,6 +586,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "NPC24H",
@@ -508,6 +598,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.85,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "日本パーキング",
   },
 
@@ -521,6 +613,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "高速道路料金",
   },
 
@@ -534,6 +628,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "WILLER",
@@ -544,6 +640,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
     note: "WILLER EXPRESS 高速バス",
   },
 
@@ -557,6 +655,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ニッポンレンタカー",
@@ -567,6 +667,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "オリックスレンタカー",
@@ -577,6 +679,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "タイムズカーレンタル",
@@ -587,6 +691,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── Bike share ──
@@ -599,6 +705,8 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "HELLO CYCLING",
@@ -609,5 +717,7 @@ export const TRANSPORT_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

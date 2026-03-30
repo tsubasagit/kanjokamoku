@@ -21,6 +21,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "東京海上日動火災保険 — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "三井住友海上",
@@ -32,6 +33,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "損保ジャパン",
@@ -43,6 +45,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "あいおいニッセイ同和",
@@ -54,6 +57,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "あいおいニッセイ同和損害保険 — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "AIG損保",
@@ -65,6 +69,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "AIG損害保険 — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
 
   // ── 生命保険 ──
@@ -78,6 +83,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "第一生命",
@@ -89,6 +95,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "明治安田生命",
@@ -100,6 +107,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "住友生命",
@@ -111,6 +119,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "メットライフ生命",
@@ -122,6 +131,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "MetLife — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "アフラック",
@@ -133,6 +143,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "Aflac — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "オリックス生命",
@@ -144,6 +155,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
 
   // ── 自動車保険（ダイレクト系） ──
@@ -157,6 +169,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "ソニー損害保険 — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "イーデザイン損保",
@@ -168,6 +181,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "東京海上グループ — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "チューリッヒ保険",
@@ -179,6 +193,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "Zurich Insurance — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "アクサダイレクト",
@@ -190,6 +205,7 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "AXA — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
   {
     name: "SBI損保",
@@ -201,5 +217,6 @@ export const INSURANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "SBI損害保険 — 非課税取引",
+    consumptionTaxClass: "非課税仕入",
   },
 ];

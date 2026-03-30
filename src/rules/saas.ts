@@ -19,6 +19,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Amazon Web Services",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Amazon Web Services",
@@ -29,6 +32,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.97,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Google Cloud",
@@ -39,6 +45,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Google Workspace",
@@ -50,6 +59,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "旧G Suite",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Azure",
@@ -61,6 +73,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Microsoft Azure",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Microsoft 365",
@@ -72,6 +87,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "旧Office 365",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Oracle Cloud",
@@ -82,6 +100,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "SAP Cloud",
@@ -92,6 +113,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── Hosting ──
@@ -104,6 +128,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Firebase",
@@ -115,6 +142,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Google Firebase",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Heroku",
@@ -125,6 +155,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Netlify",
@@ -135,6 +168,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Railway",
@@ -146,6 +182,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "Railway.app",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Render",
@@ -157,6 +196,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "render.com — 一般的な単語のため confidence 低め",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Fly.io",
@@ -167,6 +209,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Supabase",
@@ -177,6 +222,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "PlanetScale",
@@ -187,6 +235,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Neon",
@@ -198,6 +249,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.75,
     note: "Neon Database — 一般的な単語のため confidence 低め",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── Communication ──
@@ -210,6 +264,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Zoom",
@@ -221,6 +278,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Zoom Video Communications",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Microsoft Teams",
@@ -231,6 +291,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Google Meet",
@@ -241,6 +304,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Discord",
@@ -252,6 +318,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Discord Nitro等の有料プラン",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── Productivity ──
@@ -264,6 +333,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Obsidian",
@@ -275,6 +347,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "Obsidian Sync/Publish等の有料機能",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Evernote",
@@ -285,6 +360,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Dropbox",
@@ -295,6 +373,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Box",
@@ -306,6 +387,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "Box Inc. — 短い名称のため exact match",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Google Drive/One",
@@ -317,6 +401,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Google Drive / Google One ストレージ",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── PM ──
@@ -329,6 +416,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "JIRA",
@@ -340,6 +430,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Atlassian JIRA",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Trello",
@@ -350,6 +443,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Monday.com",
@@ -360,6 +456,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "ClickUp",
@@ -370,6 +469,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Backlog",
@@ -381,6 +483,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "Nulab Backlog",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Redmine Cloud",
@@ -392,6 +496,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "Redmine クラウド版",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Linear",
@@ -403,6 +509,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "Linear.app — 一般的な単語のため confidence 低め",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── CRM ──
@@ -415,6 +524,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "HubSpot",
@@ -425,6 +537,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Zoho",
@@ -435,6 +550,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "kintone",
@@ -446,6 +564,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "サイボウズ kintone",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── Design ──
@@ -458,6 +578,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Adobe Creative Cloud",
@@ -469,6 +592,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Adobe Creative Cloud サブスクリプション",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Canva",
@@ -479,6 +605,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Miro",
@@ -489,6 +618,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Sketch",
@@ -500,6 +632,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "Sketch.com — 一般的な単語のため confidence 低め",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── HR ──
@@ -512,6 +647,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "freee人事労務",
@@ -522,6 +659,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "KING OF TIME",
@@ -533,6 +672,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "勤怠管理SaaS",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ジョブカン",
@@ -543,6 +684,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── No-code ──
@@ -555,6 +698,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Make(Integromat)",
@@ -566,6 +712,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "旧Integromat — Make は一般的な単語のため confidence 低め",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Airtable",
@@ -576,6 +725,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Webflow",
@@ -586,6 +738,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── DevOps ──
@@ -598,6 +753,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "GitLab",
@@ -608,6 +766,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Bitbucket",
@@ -619,6 +780,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Atlassian Bitbucket",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "CircleCI",
@@ -629,6 +793,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Docker Hub",
@@ -640,6 +807,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Docker Hub / Docker Desktop サブスクリプション",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── Monitoring ──
@@ -652,6 +822,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "New Relic",
@@ -662,6 +835,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Sentry",
@@ -672,6 +848,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "PagerDuty",
@@ -682,6 +861,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── AI ──
@@ -695,6 +877,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "ChatGPT / GPT API",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Anthropic",
@@ -706,6 +891,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Claude API",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Midjourney",
@@ -716,6 +904,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
   {
     name: "Stability AI",
@@ -727,6 +918,9 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "Stable Diffusion API 等",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。登録国外事業者からの仕入れに限り仕入税額控除可"],
   },
 
   // ── Japan hosting ──
@@ -739,6 +933,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "エックスサーバー",
@@ -749,6 +945,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ロリポップ",
@@ -760,6 +958,8 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "GMOペパボ ロリポップ!",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ConoHa",
@@ -771,5 +971,7 @@ export const SAAS_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "GMOインターネット ConoHa",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

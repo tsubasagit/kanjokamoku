@@ -20,6 +20,9 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Google広告（旧AdWords）",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。リバースチャージの対象となる場合あり"],
   },
   {
     name: "Meta Ads",
@@ -31,6 +34,9 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Facebook / Instagram広告",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国外事業者からの電気通信利用役務の提供。リバースチャージの対象となる場合あり"],
   },
   {
     name: "Yahoo!広告",
@@ -42,6 +48,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Yahoo!プロモーション広告",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "LINE広告",
@@ -53,6 +61,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "LINE Ads Platform",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Twitter/X広告",
@@ -64,6 +74,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "X（旧Twitter）広告",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "TikTok広告",
@@ -75,6 +87,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "TikTok for Business",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Microsoft広告",
@@ -86,6 +100,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "Bing Ads",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "SmartNews Ads",
@@ -97,6 +113,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "SmartNews広告",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── PR ──
@@ -110,6 +128,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "プレスリリース配信",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "@Press",
@@ -121,6 +141,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "プレスリリース配信",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── SEO / マーケティングツール ──
@@ -134,6 +156,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "SEO分析ツール",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "SEMrush",
@@ -145,6 +169,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "SEO/マーケティングツール",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Moz",
@@ -156,6 +182,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "Moz Pro SEOツール",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "GRC",
@@ -167,6 +195,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "検索順位チェックツール",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ラッコキーワード",
@@ -178,6 +208,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "キーワード調査ツール",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "SocialDog",
@@ -189,6 +221,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "SNS運用ツール",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Buffer",
@@ -200,6 +234,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "SNS投稿管理ツール",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Mailchimp",
@@ -211,6 +247,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "メールマーケティング",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "SendGrid",
@@ -222,6 +260,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "メール配信サービス（Twilio系）",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 印刷 ──
@@ -235,6 +275,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "ネット印刷",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "プリントパック",
@@ -246,6 +288,8 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "ネット印刷",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "グラフィック",
@@ -257,5 +301,7 @@ export const ADVERTISING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.7,
     note: "印刷通販グラフィック — 一般的な単語のため confidence 低め",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

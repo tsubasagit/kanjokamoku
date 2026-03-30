@@ -20,6 +20,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "Regus",
@@ -31,6 +34,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "IWG Regus",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "SPACES",
@@ -42,6 +48,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.8,
     note: "IWG SPACES — 一般的な単語のため confidence 低め",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "BIZcomfort",
@@ -52,6 +61,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "いいオフィス",
@@ -62,6 +74,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "fabbit",
@@ -72,6 +87,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "PLUG AND PLAY",
@@ -83,6 +101,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "Plug and Play アクセラレーター/コワーキング",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
 
   // ── レンタルオフィス → 地代家賃(519) ──
@@ -96,6 +117,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "サーブコープ レンタルオフィス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "TKP",
@@ -107,6 +131,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.85,
     note: "ティーケーピー — 貸会議室利用の場合は会議費(515)",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "日本リージャス",
@@ -118,6 +145,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "IWG日本リージャス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
 
   // ── 貸会議室 → 会議費(515) ──
@@ -131,6 +161,9 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.85,
     note: "スペースマーケット — 利用目的により科目が変わる場合あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
   {
     name: "インスタベース",
@@ -142,5 +175,8 @@ export const OFFICE_SPACE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.85,
     note: "レンタルスペース予約 — 利用目的により科目が変わる場合あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["住居用の土地・建物の賃料は非課税。事業用オフィス・コワーキングは課税仕入10%"],
   },
 ];

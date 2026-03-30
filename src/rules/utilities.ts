@@ -20,6 +20,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "東京電力エナジーパートナー",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "関西電力",
@@ -30,6 +33,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "中部電力",
@@ -40,6 +46,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "東北電力",
@@ -50,6 +59,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "九州電力",
@@ -60,6 +72,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "北海道電力",
@@ -70,6 +85,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "四国電力",
@@ -80,6 +98,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "中国電力",
@@ -90,6 +111,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "北陸電力",
@@ -100,6 +124,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "沖縄電力",
@@ -110,6 +137,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "Looopでんき",
@@ -121,6 +151,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "新電力 Looopでんき",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "楽天でんき",
@@ -132,6 +165,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "楽天エナジー",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "auでんき",
@@ -143,6 +179,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "KDDI auでんき",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "ENEOSでんき",
@@ -153,6 +192,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "ソフトバンクでんき",
@@ -163,6 +205,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
 
   // ── ガス ──
@@ -175,6 +220,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "大阪ガス",
@@ -185,6 +233,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "東邦ガス",
@@ -195,6 +246,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "西部ガス",
@@ -205,6 +259,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "北海道ガス",
@@ -215,6 +272,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "京葉ガス",
@@ -225,6 +285,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "静岡ガス",
@@ -235,6 +298,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "ENEOSガス",
@@ -245,6 +311,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
   {
     name: "東急ガス",
@@ -255,6 +324,9 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
 
   // ── 水道 ──
@@ -268,5 +340,8 @@ export const UTILITY_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "各自治体の水道局",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自宅兼事務所の場合、事業使用割合（面積比・使用時間比等）で按分が必要",
   },
 ];

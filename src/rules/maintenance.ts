@@ -22,6 +22,8 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "清掃・害虫駆除等",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ベアーズ",
@@ -33,6 +35,8 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "家事代行・ハウスクリーニング",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "CaSy",
@@ -44,6 +48,8 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "家事代行サービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "おそうじ本舗",
@@ -55,6 +61,8 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "ハウスクリーニング",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 警備サービス → 支払手数料(517) ──
@@ -68,6 +76,8 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "セコム セキュリティサービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ALSOK",
@@ -79,6 +89,8 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "綜合警備保障",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "セントラル警備保障",
@@ -90,6 +102,8 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "CSP セントラル警備保障",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 修理・修繕 → 修繕費(532) ──
@@ -103,6 +117,9 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.8,
     note: "修理の内容により資本的支出（資産計上）となる場合あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["修繕費と資本的支出の判定に注意。原状回復=修繕費、価値増加=資本的支出（減価償却資産）"],
   },
   {
     name: "リペア",
@@ -114,6 +131,9 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.8,
     note: "修繕・補修",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["修繕費と資本的支出の判定に注意。原状回復=修繕費、価値増加=資本的支出（減価償却資産）"],
   },
   {
     name: "メンテナンス",
@@ -125,5 +145,8 @@ export const MAINTENANCE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.75,
     note: "保守点検 — ITサービスのメンテナンスと混同しないよう注意",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["修繕費と資本的支出の判定に注意。原状回復=修繕費、価値増加=資本的支出（減価償却資産）"],
   },
 ];

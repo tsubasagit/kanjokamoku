@@ -20,6 +20,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "ベネフィットステーション",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "リロクラブ",
@@ -31,6 +33,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "福利厚生倶楽部運営",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "福利厚生倶楽部",
@@ -42,6 +46,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "リロクラブ運営",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "WELBOX",
@@ -53,6 +59,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "イーウェル福利厚生サービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 食事補助 ──
@@ -66,6 +74,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "エデンレッド 食事補助サービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "オフィスおかん",
@@ -77,6 +87,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "置き型社食サービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "オフィスグリコ",
@@ -88,6 +100,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "置き菓子サービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 健康関連 ──
@@ -101,6 +115,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "定期健康診断・法定健診",
+    consumptionTaxClass: "非課税仕入",
+    taxNotes: ["医療行為は非課税（消費税法別表第一第六号）"],
   },
   {
     name: "人間ドック",
@@ -111,6 +127,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "非課税仕入",
+    taxNotes: ["医療行為は非課税（消費税法別表第一第六号）"],
   },
   {
     name: "フィットネス",
@@ -122,6 +140,8 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "法人契約のフィットネスクラブ",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "スポーツジム",
@@ -133,5 +153,7 @@ export const WELFARE_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "法人契約のスポーツジム",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

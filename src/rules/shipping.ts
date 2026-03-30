@@ -19,6 +19,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ヤマト運輸",
@@ -30,6 +32,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "現金",
     confidence: 0.95,
     note: "クロネコヤマト",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "佐川急便",
@@ -40,6 +44,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "西濃運輸",
@@ -50,6 +56,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "福山通運",
@@ -60,6 +68,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountCode: "101",
     counterAccountName: "現金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "日本通運",
@@ -71,6 +81,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "現金",
     confidence: 0.9,
     note: "NX日本通運",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "クリックポスト",
@@ -82,6 +94,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "日本郵便 クリックポスト",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "レターパック",
@@ -93,6 +107,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "現金",
     confidence: 0.95,
     note: "日本郵便 レターパック",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ゆうパック",
@@ -104,6 +120,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "現金",
     confidence: 0.95,
     note: "日本郵便 ゆうパック",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ネコポス",
@@ -115,6 +133,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "ヤマト運輸 ネコポス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 国際配送 ──
@@ -128,6 +148,9 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "DHL Express 国際宅配便",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国際輸送の場合は輸出免税の可能性あり。国内配送部分は課税仕入10%"],
   },
   {
     name: "FedEx",
@@ -138,6 +161,9 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国際輸送の場合は輸出免税の可能性あり。国内配送部分は課税仕入10%"],
   },
   {
     name: "UPS",
@@ -149,6 +175,9 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "United Parcel Service",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国際輸送の場合は輸出免税の可能性あり。国内配送部分は課税仕入10%"],
   },
   {
     name: "EMS",
@@ -160,5 +189,8 @@ export const SHIPPING_RULES: ClassificationRule[] = [
     counterAccountName: "現金",
     confidence: 0.8,
     note: "国際スピード郵便（日本郵便）",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["国際輸送の場合は輸出免税の可能性あり。国内配送部分は課税仕入10%"],
   },
 ];

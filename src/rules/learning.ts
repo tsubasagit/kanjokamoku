@@ -20,6 +20,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ジュンク堂書店",
@@ -30,6 +32,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "三省堂書店",
@@ -41,6 +45,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "辞書出版社と区別が必要な場合あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "TSUTAYA",
@@ -52,6 +58,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.7,
     note: "書籍以外（レンタル等）の可能性あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "honto",
@@ -63,6 +71,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "丸善ジュンク堂系オンライン書店",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "啓文堂書店",
@@ -73,6 +83,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ブックオフ",
@@ -84,6 +96,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "書籍以外の中古品も取り扱い",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Kindle",
@@ -95,6 +109,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Amazon Kindle電子書籍",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "楽天ブックス",
@@ -105,6 +121,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 新聞 → 新聞図書費(516) ──
@@ -117,6 +135,10 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入8%軽減",
+    taxRateOverride: 8,
+    invoiceRequired: true,
+    taxNotes: ["定期購読契約に基づく週2回以上発行の新聞は軽減税率8%（消費税法別表第一第二号）。電子版のみは10%"],
   },
   {
     name: "朝日新聞",
@@ -127,6 +149,10 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入8%軽減",
+    taxRateOverride: 8,
+    invoiceRequired: true,
+    taxNotes: ["定期購読契約に基づく週2回以上発行の新聞は軽減税率8%（消費税法別表第一第二号）。電子版のみは10%"],
   },
   {
     name: "読売新聞",
@@ -137,6 +163,10 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入8%軽減",
+    taxRateOverride: 8,
+    invoiceRequired: true,
+    taxNotes: ["定期購読契約に基づく週2回以上発行の新聞は軽減税率8%（消費税法別表第一第二号）。電子版のみは10%"],
   },
   {
     name: "毎日新聞",
@@ -147,6 +177,10 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入8%軽減",
+    taxRateOverride: 8,
+    invoiceRequired: true,
+    taxNotes: ["定期購読契約に基づく週2回以上発行の新聞は軽減税率8%（消費税法別表第一第二号）。電子版のみは10%"],
   },
   {
     name: "日経電子版",
@@ -158,6 +192,9 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "日本経済新聞デジタル版",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["電子版のみの購読は軽減税率の対象外。標準税率10%"],
   },
   {
     name: "NewsPicks",
@@ -169,6 +206,9 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "経済ニュースメディア",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    taxNotes: ["電子版のみの購読は軽減税率の対象外。標準税率10%"],
   },
 
   // ── オンライン学習 → 研修費(527) ──
@@ -181,6 +221,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Coursera",
@@ -191,6 +233,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Progate",
@@ -202,6 +246,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "プログラミング学習サービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "TechAcademy",
@@ -212,6 +258,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Schoo",
@@ -222,6 +270,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ストアカ",
@@ -233,6 +283,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "ストリートアカデミー",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "LinkedIn Learning",
@@ -243,6 +295,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Pluralsight",
@@ -253,6 +307,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 資格取得 → 研修費(527) ──
@@ -266,6 +322,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "資格の大原（大原学園）",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "TAC",
@@ -277,6 +335,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "TAC株式会社 資格スクール",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "LEC東京リーガルマインド",
@@ -288,6 +348,8 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.8,
     note: "LEC東京リーガルマインド",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ユーキャン",
@@ -299,5 +361,7 @@ export const LEARNING_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "通信教育・資格講座",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

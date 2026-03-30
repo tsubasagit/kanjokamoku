@@ -20,6 +20,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "現金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "収入印紙",
@@ -31,6 +32,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "現金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "登録免許税",
@@ -42,6 +44,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "法人登記・不動産登記等 — 不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "自動車税",
@@ -53,6 +56,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "自動車重量税",
@@ -64,6 +68,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "固定資産税",
@@ -75,6 +80,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "不動産取得税",
@@ -86,6 +92,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "事業所税",
@@ -97,6 +104,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "個人事業税",
@@ -108,6 +116,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "法人事業税",
@@ -119,6 +128,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "法人住民税",
@@ -130,6 +140,7 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "不課税取引",
+    consumptionTaxClass: "不課税",
   },
   {
     name: "償却資産税",
@@ -141,5 +152,6 @@ export const TAX_FEE_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "固定資産税（償却資産） — 不課税取引",
+    consumptionTaxClass: "不課税",
   },
 ];

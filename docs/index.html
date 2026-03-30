@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kanjokamoku — 日本の勘定科目マスタ & 自動仕訳判定ルール</title>
+  <meta name="description" content="日本の中小企業が日常的に取引する企業・サービスを網羅した、初のオープンソース勘定科目自動判定ライブラリ">
+  <meta name="keywords" content="勘定科目, 自動仕訳, 消費税, インボイス制度, 源泉徴収, TypeScript, npm, オープンソース">
+  <meta property="og:title" content="kanjokamoku — 日本の勘定科目マスタ & 自動仕訳判定ルール">
+  <meta property="og:description" content="日本の中小企業が日常的に取引する企業・サービスを網羅した、初のオープンソース勘定科目自動判定ライブラリ">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tsubasagit.github.io/kanjokamoku/">
+  <link rel="canonical" href="https://tsubasagit.github.io/kanjokamoku/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#538bb0',
+              dark: '#3d6f94',
+              light: '#6ba3c8',
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .gradient-hero {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2a5a8a 40%, #538bb0 100%);
+    }
+    .code-block {
+      background: #1e293b;
+      border-radius: 0.75rem;
+      overflow-x: auto;
+    }
+    .code-block code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(83, 139, 176, 0.15);
+    }
+    .feature-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stat-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .table-row:hover {
+      background-color: #f1f5f9;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .npm-install {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .npm-install:hover {
+      border-color: #538bb0;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .animate-delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .animate-delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .animate-delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .animate-delay-400 { animation-delay: 0.4s; opacity: 0; }
+  </style>
+</head>
+<body class="font-sans text-slate-800 bg-white">
+
+  <!-- ===== Hero Section ===== -->
+  <section class="gradient-hero text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-32 relative z-10">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div class="flex-shrink-0">
+          <img
+            src="rapid-kun.png"
+            alt="ラピットくん — kanjokamoku マスコット"
+            class="w-32 h-32 md:w-44 md:h-44 rounded-2xl shadow-2xl animate-fade-in-up"
+          >
+        </div>
+        <div class="text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up">
+            kanjokamoku
+          </h1>
+          <p class="text-xl md:text-2xl text-blue-100 mb-6 animate-fade-in-up animate-delay-100">
+            日本の勘定科目マスタ &amp; 自動仕訳判定ルール
+          </p>
+          <p class="text-base md:text-lg text-blue-200 max-w-2xl mb-8 animate-fade-in-up animate-delay-200">
+            日本の中小企業が日常的に取引する企業・サービスを網羅した、初のオープンソース勘定科目自動判定ライブラリ。消費税区分・インボイス対応・源泉徴収情報を完備。
+          </p>
+
+          <!-- npm install -->
+          <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up animate-delay-300">
+            <div class="npm-install flex items-center gap-3 px-5 py-3" onclick="navigator.clipboard.writeText('npm install kanjokamoku'); this.querySelector('.copy-label').textContent = 'Copied!';">
+              <span class="text-slate-400 select-none">$</span>
+              <code class="font-mono text-white text-sm md:text-base">npm install kanjokamoku</code>
+              <span class="copy-label text-xs text-slate-500 ml-2">Click to copy</span>
+            </div>
+            <a href="https://github.com/tsubasagit/kanjokamoku" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Stats ===== -->
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">513+</div>
+          <div class="text-sm text-slate-500 mt-1">Rules / ルール</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">21</div>
+          <div class="text-sm text-slate-500 mt-1">Categories / カテゴリ</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">MIT</div>
+          <div class="text-sm text-slate-500 mt-1">License / ライセンス</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">TS</div>
+          <div class="text-sm text-slate-500 mt-1">TypeScript / 型安全</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Key Features ===== -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">主な機能</h2>
+        <p class="text-slate-500 text-lg">Key Features</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Feature 1 -->
+        <div class="feature-card bg-white rounded-xl p-6 border border-slate-200">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">消費税区分対応</h3>
+          <p class="text-slate-500 text-sm">
+            課税仕入10%・軽減8%・非課税・不課税・輸出免税の5区分を全ルールに付与。仕入税額控除の申告に直結。
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card bg-white rounded-xl p-6 border border-slate-200">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">インボイス制度対応</h3>
+          <p class="text-slate-500 text-sm">
+            適格請求書（インボイス）が仕入税額控除に必要かどうかを <code class="bg-slate-100 px-1 rounded">invoiceRequired</code> フラグで明示。
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card bg-white rounded-xl p-6 border border-slate-200">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">源泉徴収情報</h3>
+          <p class="text-slate-500 text-sm">
+            士業・フリーランスへの支払い時の源泉徴収率（10.21%）と根拠条文（所得税法204条）を構造化データで提供。
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card bg-white rounded-xl p-6 border border-slate-200">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">経費按分注記</h3>
+          <p class="text-slate-500 text-sm">
+            自宅兼事務所のインターネット費用やカーリースなど、按分が必要な経費に <code class="bg-slate-100 px-1 rounded">expenseAllocationNote</code> を付与。
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card bg-white rounded-xl p-6 border border-slate-200">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">5,000円ルール</h3>
+          <p class="text-slate-500 text-sm">
+            飲食費の5,000円基準（会議費 vs 交際費）を金額ベースで自動判定。接待交際費の損金算入注記も完備。
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card bg-white rounded-xl p-6 border border-slate-200">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">ゼロ依存・型安全</h3>
+          <p class="text-slate-500 text-sm">
+            外部依存ゼロ。TypeScript完全対応で、IDEの補完が効く構造化データ。Tree-shakingにも対応。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Code Example ===== -->
+  <section class="bg-slate-50 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">使い方</h2>
+        <p class="text-slate-500 text-lg">Usage Example</p>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <div class="code-block p-6 shadow-xl">
+          <pre class="text-sm md:text-base leading-relaxed"><code><span class="text-blue-400">import</span> <span class="text-slate-300">{ classify }</span> <span class="text-blue-400">from</span> <span class="text-green-400">"kanjokamoku"</span><span class="text-slate-300">;</span>
+
+<span class="text-slate-500">// 取引先名から勘定科目を自動判定</span>
+<span class="text-blue-400">const</span> <span class="text-slate-300">result</span> <span class="text-slate-400">=</span> <span class="text-yellow-300">classify</span><span class="text-slate-300">(</span><span class="text-green-400">"AWS"</span><span class="text-slate-300">);</span>
+
+<span class="text-slate-300">console.</span><span class="text-yellow-300">log</span><span class="text-slate-300">(result.account.name);</span>
+<span class="text-slate-500">// → "通信費"</span>
+
+<span class="text-slate-300">console.</span><span class="text-yellow-300">log</span><span class="text-slate-300">(result.consumptionTaxClass);</span>
+<span class="text-slate-500">// → "課税仕入10%"</span>
+
+<span class="text-slate-300">console.</span><span class="text-yellow-300">log</span><span class="text-slate-300">(result.invoiceRequired);</span>
+<span class="text-slate-500">// → true</span>
+
+<span class="text-slate-500">// 飲食費は金額で会議費 / 交際費を自動判定</span>
+<span class="text-blue-400">const</span> <span class="text-slate-300">meal</span> <span class="text-slate-400">=</span> <span class="text-yellow-300">classify</span><span class="text-slate-300">(</span><span class="text-green-400">"スターバックス"</span><span class="text-slate-300">,</span> <span class="text-purple-400">3000</span><span class="text-slate-300">);</span>
+<span class="text-slate-300">console.</span><span class="text-yellow-300">log</span><span class="text-slate-300">(meal.account.name);</span>
+<span class="text-slate-500">// → "会議費"（5,000円以下）</span>
+
+<span class="text-blue-400">const</span> <span class="text-slate-300">dinner</span> <span class="text-slate-400">=</span> <span class="text-yellow-300">classify</span><span class="text-slate-300">(</span><span class="text-green-400">"スターバックス"</span><span class="text-slate-300">,</span> <span class="text-purple-400">8000</span><span class="text-slate-300">);</span>
+<span class="text-slate-300">console.</span><span class="text-yellow-300">log</span><span class="text-slate-300">(dinner.account.name);</span>
+<span class="text-slate-500">// → "接待交際費"（5,000円超）</span></code></pre>
+        </div>
+        <p class="text-center text-sm text-slate-400 mt-4">TypeScript / JavaScript (ESM &amp; CJS 対応)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Category List ===== -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">全21カテゴリ</h2>
+        <p class="text-slate-500 text-lg">All Categories &amp; Rule Counts</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="border-b-2 border-slate-200">
+              <th class="text-left py-3 px-4 text-sm font-semibold text-slate-600">#</th>
+              <th class="text-left py-3 px-4 text-sm font-semibold text-slate-600">カテゴリ / Category</th>
+              <th class="text-left py-3 px-4 text-sm font-semibold text-slate-600">主な勘定科目</th>
+              <th class="text-right py-3 px-4 text-sm font-semibold text-slate-600">ルール数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">01</td>
+              <td class="py-3 px-4 text-sm font-medium">SaaS / クラウドサービス</td>
+              <td class="py-3 px-4 text-sm text-slate-500">通信費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">71</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">02</td>
+              <td class="py-3 px-4 text-sm font-medium">飲食 / ダイニング</td>
+              <td class="py-3 px-4 text-sm text-slate-500">会議費・接待交際費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">67</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">03</td>
+              <td class="py-3 px-4 text-sm font-medium">交通 / トランスポート</td>
+              <td class="py-3 px-4 text-sm text-slate-500">旅費交通費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">55</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">04</td>
+              <td class="py-3 px-4 text-sm font-medium">消耗品 / 事務用品</td>
+              <td class="py-3 px-4 text-sm text-slate-500">消耗品費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">33</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">05</td>
+              <td class="py-3 px-4 text-sm font-medium">教育 / 研修</td>
+              <td class="py-3 px-4 text-sm text-slate-500">研修費・新聞図書費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">27</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">06</td>
+              <td class="py-3 px-4 text-sm font-medium">光熱水費 / ユーティリティ</td>
+              <td class="py-3 px-4 text-sm text-slate-500">水道光熱費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">25</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">07</td>
+              <td class="py-3 px-4 text-sm font-medium">士業 / 専門家</td>
+              <td class="py-3 px-4 text-sm text-slate-500">支払手数料・外注費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">23</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">08</td>
+              <td class="py-3 px-4 text-sm font-medium">広告 / マーケティング</td>
+              <td class="py-3 px-4 text-sm text-slate-500">広告宣伝費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">22</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">09</td>
+              <td class="py-3 px-4 text-sm font-medium">宿泊 / ホテル</td>
+              <td class="py-3 px-4 text-sm text-slate-500">旅費交通費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">22</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">10</td>
+              <td class="py-3 px-4 text-sm font-medium">通信 / テレコム</td>
+              <td class="py-3 px-4 text-sm text-slate-500">通信費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">21</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">11</td>
+              <td class="py-3 px-4 text-sm font-medium">サブスクリプション</td>
+              <td class="py-3 px-4 text-sm text-slate-500">通信費・新聞図書費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">21</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">12</td>
+              <td class="py-3 px-4 text-sm font-medium">Webインフラ</td>
+              <td class="py-3 px-4 text-sm text-slate-500">通信費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">18</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">13</td>
+              <td class="py-3 px-4 text-sm font-medium">手数料 / バンキング</td>
+              <td class="py-3 px-4 text-sm text-slate-500">支払手数料</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">17</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">14</td>
+              <td class="py-3 px-4 text-sm font-medium">保険</td>
+              <td class="py-3 px-4 text-sm text-slate-500">保険料</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">17</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">15</td>
+              <td class="py-3 px-4 text-sm font-medium">配送 / 物流</td>
+              <td class="py-3 px-4 text-sm text-slate-500">荷造運賃</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">14</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">16</td>
+              <td class="py-3 px-4 text-sm font-medium">オフィススペース</td>
+              <td class="py-3 px-4 text-sm text-slate-500">地代家賃・会議費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">12</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">17</td>
+              <td class="py-3 px-4 text-sm font-medium">税金 / 公課</td>
+              <td class="py-3 px-4 text-sm text-slate-500">租税公課</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">12</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">18</td>
+              <td class="py-3 px-4 text-sm font-medium">福利厚生</td>
+              <td class="py-3 px-4 text-sm text-slate-500">福利厚生費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">11</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">19</td>
+              <td class="py-3 px-4 text-sm font-medium">メンテナンス / 修繕</td>
+              <td class="py-3 px-4 text-sm text-slate-500">外注費・支払手数料・修繕費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">10</td>
+            </tr>
+            <tr class="table-row border-b border-slate-100">
+              <td class="py-3 px-4 text-sm text-slate-400">20</td>
+              <td class="py-3 px-4 text-sm font-medium">リース</td>
+              <td class="py-3 px-4 text-sm text-slate-500">リース料</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">9</td>
+            </tr>
+            <tr class="table-row">
+              <td class="py-3 px-4 text-sm text-slate-400">21</td>
+              <td class="py-3 px-4 text-sm font-medium">コンビニエンスストア</td>
+              <td class="py-3 px-4 text-sm text-slate-500">消耗品費</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-semibold text-primary">6</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="border-t-2 border-slate-300 bg-slate-50">
+              <td class="py-3 px-4"></td>
+              <td class="py-3 px-4 text-sm font-bold" colspan="2">合計 / Total</td>
+              <td class="py-3 px-4 text-sm text-right font-mono font-bold text-primary">513</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Tax Support ===== -->
+  <section class="bg-slate-50 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">税務プロフェッショナル対応</h2>
+        <p class="text-slate-500 text-lg">Professional Tax Fields</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <code class="text-sm text-primary font-mono font-medium">consumptionTaxClass</code>
+          <p class="text-sm text-slate-500 mt-2">消費税区分 -- 課税仕入10% / 軽減8% / 非課税 / 不課税 / 輸出免税</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <code class="text-sm text-primary font-mono font-medium">invoiceRequired</code>
+          <p class="text-sm text-slate-500 mt-2">適格請求書（インボイス）の要否。仕入税額控除に必須かを判定</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <code class="text-sm text-primary font-mono font-medium">withholding</code>
+          <p class="text-sm text-slate-500 mt-2">源泉徴収情報 -- 税率・根拠条文（所得税法204条）を構造化</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <code class="text-sm text-primary font-mono font-medium">taxNotes</code>
+          <p class="text-sm text-slate-500 mt-2">税務上の注意事項 -- 軽減税率・修繕費判定・医療非課税など</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <code class="text-sm text-primary font-mono font-medium">expenseAllocationNote</code>
+          <p class="text-sm text-slate-500 mt-2">経費按分注記 -- 自宅兼事務所・自家用車兼用時の按分方法</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <code class="text-sm text-primary font-mono font-medium">entertainmentExpenseNote</code>
+          <p class="text-sm text-slate-500 mt-2">接待交際費の損金算入 -- 5,000円基準・法人の損金算入限度額</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA Section ===== -->
+  <section class="bg-[#538bb0] py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">今すぐ始めましょう</h2>
+      <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+        npmからインストールして、あなたの会計ソフト・経費精算アプリに組み込めます。<br>MITライセンスで商用利用も自由です。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://github.com/tsubasagit/kanjokamoku" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-[#538bb0] hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub Repository
+        </a>
+        <a href="https://www.npmjs.com/package/kanjokamoku" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.332h-2.669v-.001zm12.001 0h-1.33v-4h-1.336v4h-1.335v-4h-1.33v4h-2.671V8.667h8.002v5.331zM10.665 10H12v2.667h-1.335V10z"/></svg>
+          npm Package
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-slate-800 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <p class="font-semibold text-lg">kanjokamoku</p>
+          <p class="text-slate-400 text-sm mt-1">Built by AppTalentHub Inc. -- AI-native company</p>
+        </div>
+        <div class="flex items-center gap-6 text-sm text-slate-400">
+          <a href="https://github.com/tsubasagit/kanjokamoku" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+          <a href="https://www.npmjs.com/package/kanjokamoku" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">npm</a>
+          <span>MIT License</span>
+        </div>
+      </div>
+      <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-500">
+        &copy; 2026 AppTalentHub Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

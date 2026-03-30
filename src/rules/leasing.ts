@@ -20,6 +20,9 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "カーリース",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自家用車兼用の場合、業務使用割合で按分が必要",
   },
   {
     name: "トヨタファイナンス",
@@ -31,6 +34,9 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "トヨタ系カーリース — ローンの場合は別科目",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自家用車兼用の場合、業務使用割合で按分が必要",
   },
   {
     name: "ホンダファイナンス",
@@ -42,6 +48,9 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "ホンダ系カーリース — ローンの場合は別科目",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自家用車兼用の場合、業務使用割合で按分が必要",
   },
   {
     name: "日産フィナンシャル",
@@ -53,6 +62,9 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "日産系カーリース — ローンの場合は別科目",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自家用車兼用の場合、業務使用割合で按分が必要",
   },
   {
     name: "リースナブル",
@@ -64,6 +76,9 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "格安カーリース",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
+    expenseAllocationNote: "自家用車兼用の場合、業務使用割合で按分が必要",
   },
 
   // ── OA機器リース ──
@@ -77,6 +92,8 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "複合機・OA機器リース",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "キヤノンファイナンス",
@@ -88,6 +105,8 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "キヤノン系リース・ファイナンス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "富士フイルムビジネスイノベーション",
@@ -99,6 +118,8 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "旧富士ゼロックス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "大塚商会",
@@ -110,5 +131,7 @@ export const LEASING_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.85,
     note: "OA機器リース・IT機器 — 購入の場合は消耗品費/固定資産",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

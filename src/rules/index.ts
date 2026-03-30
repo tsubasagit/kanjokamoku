@@ -1,7 +1,7 @@
 // kanjokamoku — 全ルール統合エクスポート
 // https://github.com/tsubasagit/kanjokamoku — MIT License
 
-export type { ClassificationRule } from "./types";
+export type { ClassificationRule, ConsumptionTaxClass, WithholdingInfo } from "./types";
 
 export { SAAS_RULES } from "./saas";
 export { TELECOM_RULES } from "./telecom";

@@ -19,6 +19,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "KDDI/au",
@@ -29,6 +31,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ソフトバンク",
@@ -40,6 +44,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "SoftBank モバイル / 光",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── Sub-brands（口座振替） ──
@@ -53,6 +59,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "KDDI サブブランド",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Y!mobile",
@@ -64,6 +72,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "ソフトバンク サブブランド",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "povo",
@@ -75,6 +85,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "KDDI オンライン専用プラン",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "LINEMO",
@@ -86,6 +98,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "ソフトバンク オンライン専用プラン",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ahamo",
@@ -97,6 +111,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "ドコモ オンライン専用プラン",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── MVNO（クレジットカード） ──
@@ -109,6 +125,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "IIJmio",
@@ -119,6 +137,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "mineo",
@@ -130,6 +150,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "オプテージ mineo",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "OCNモバイルONE",
@@ -140,6 +162,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "BIGLOBEモバイル",
@@ -150,6 +174,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "nuroモバイル",
@@ -160,6 +186,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "イオンモバイル",
@@ -170,6 +198,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── ISP（口座振替） ──
@@ -183,6 +213,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "フレッツ光等の固定回線",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "NTT西日本",
@@ -194,6 +226,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "フレッツ光等の固定回線",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "NURO光",
@@ -205,6 +239,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "ソニーネットワークコミュニケーションズ",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "auひかり",
@@ -215,6 +251,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountCode: "102",
     counterAccountName: "普通預金",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "So-net",
@@ -226,6 +264,8 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.9,
     note: "ソニーネットワークコミュニケーションズ",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "フレッツ光",
@@ -237,5 +277,7 @@ export const TELECOM_RULES: ClassificationRule[] = [
     counterAccountName: "普通預金",
     confidence: 0.95,
     note: "NTT東西のフレッツ光サービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];

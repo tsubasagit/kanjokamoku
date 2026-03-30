@@ -20,6 +20,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "東横INN",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "アパホテル",
@@ -31,6 +33,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "APA Hotel",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ルートイン",
@@ -41,6 +45,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "スーパーホテル",
@@ -51,6 +57,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "コンフォートホテル",
@@ -61,6 +69,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ドーミーイン",
@@ -72,6 +82,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.95,
     note: "共立メンテナンス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "リッチモンドホテル",
@@ -82,6 +94,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "三井ガーデンホテル",
@@ -92,6 +106,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ダイワロイネットホテル",
@@ -102,6 +118,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.95,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 高級ホテル ──
@@ -115,6 +133,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Hilton Hotels — 会議費の可能性あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "マリオット",
@@ -126,6 +146,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Marriott International",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ハイアット",
@@ -137,6 +159,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Hyatt Hotels",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "シェラトン",
@@ -148,6 +172,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "Sheraton（Marriott系列）",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "ANAインターコンチネンタル",
@@ -159,6 +185,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "IHG ANA Hotels",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 
   // ── 予約サイト ──
@@ -172,6 +200,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "宿泊以外に交通手配も含む場合あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "じゃらん",
@@ -183,6 +213,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "リクルート じゃらんnet",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Booking.com",
@@ -193,6 +225,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Expedia",
@@ -204,6 +238,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "航空券も含む場合あり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Hotels.com",
@@ -214,6 +250,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Agoda",
@@ -224,6 +262,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountCode: "203",
     counterAccountName: "クレジットカード",
     confidence: 0.9,
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "一休.com",
@@ -235,6 +275,8 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.85,
     note: "一休.com — レストラン予約の可能性もあり",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
   {
     name: "Airbnb",
@@ -246,5 +288,7 @@ export const ACCOMMODATION_RULES: ClassificationRule[] = [
     counterAccountName: "クレジットカード",
     confidence: 0.9,
     note: "民泊サービス",
+    consumptionTaxClass: "課税仕入10%",
+    invoiceRequired: true,
   },
 ];
