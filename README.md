@@ -11,9 +11,9 @@
 
 ## Why / なぜ作ったか
 
-Every accounting software in Japan (freee, MoneyForward, TKC, Yayoi) has auto-classification — but **none of them publish how it works**. The rules are a black box.
+Every accounting software in Japan has auto-classification — but **none of them publish how it works**. The rules are a black box.
 
-日本の全ての会計ソフト（freee, マネーフォワード, TKC, 弥生）には自動仕訳機能がありますが、**そのロジックを公開しているものは一つもありません**。
+日本の会計ソフトには自動仕訳機能がありますが、**そのロジックを公開しているものは一つもありません**。日本の中小企業が日常的に取引する企業・サービスを網羅した、初のオープンソース仕訳判定ルールです。
 
 This library changes that. It provides:
 
@@ -149,13 +149,11 @@ console.log(result.account.name); // "地代家賃"
 
 The classification results can be exported to CSV formats compatible with:
 
-| Software | Format | Status |
+| Format | Description | Status |
 |---|---|---|
-| 弥生会計 (Yayoi) | 仕訳日記帳インポート | Supported |
-| TKC FX2 / e21 | CSV取込 | Supported |
-| JDL IBEX | CSV取込 | Supported |
-| freee | 取引インポート | Supported |
-| MoneyForward | 仕訳インポート | Supported |
+| 仕訳日記帳CSV | 多くの会計ソフトで対応する標準的なCSV形式 | Supported |
+| 汎用CSV | 日付・借方科目・金額・貸方科目・摘要の汎用形式 | Supported |
+| カスタムCSV | 任意のカラム順序・ヘッダーに対応 | Planned |
 
 ## Background / 背景
 

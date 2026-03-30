@@ -18,9 +18,9 @@
     "chart-of-accounts",
     "japan",
     "tax",
-    "freee",
-    "弥生",
-    "TKC"
+    "auto-classification",
+    "中小企業",
+    "consumption-tax"
   ],
   "author": "AppTalentHub Inc.",
   "license": "MIT",
