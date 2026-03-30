@@ -1,0 +1,137 @@
+// This file is part of kanjokamoku — MIT License
+// https://github.com/tsubasagit/kanjokamoku
+
+import type { ClassificationRule } from "./types";
+
+/**
+ * 福利厚生費 → 福利厚生費(530)
+ * 福利厚生サービス・食事補助・健康関連を分類する。
+ * counterAccount: 普通預金(102) or クレジットカード(203)
+ */
+export const WELFARE_RULES: ClassificationRule[] = [
+  // ── 福利厚生サービス ──
+  {
+    name: "ベネフィット・ワン",
+    pattern: "ベネフィット・ワン",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "102",
+    counterAccountName: "普通預金",
+    confidence: 0.95,
+    note: "ベネフィットステーション",
+  },
+  {
+    name: "リロクラブ",
+    pattern: "リロクラブ",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "102",
+    counterAccountName: "普通預金",
+    confidence: 0.95,
+    note: "福利厚生倶楽部運営",
+  },
+  {
+    name: "福利厚生倶楽部",
+    pattern: "福利厚生倶楽部",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "102",
+    counterAccountName: "普通預金",
+    confidence: 0.95,
+    note: "リロクラブ運営",
+  },
+  {
+    name: "WELBOX",
+    pattern: "WELBOX",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "102",
+    counterAccountName: "普通預金",
+    confidence: 0.95,
+    note: "イーウェル福利厚生サービス",
+  },
+
+  // ── 食事補助 ──
+  {
+    name: "チケットレストラン",
+    pattern: "チケットレストラン",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "102",
+    counterAccountName: "普通預金",
+    confidence: 0.95,
+    note: "エデンレッド 食事補助サービス",
+  },
+  {
+    name: "オフィスおかん",
+    pattern: "オフィスおかん",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "102",
+    counterAccountName: "普通預金",
+    confidence: 0.95,
+    note: "置き型社食サービス",
+  },
+  {
+    name: "オフィスグリコ",
+    pattern: "オフィスグリコ",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "102",
+    counterAccountName: "普通預金",
+    confidence: 0.95,
+    note: "置き菓子サービス",
+  },
+
+  // ── 健康関連 ──
+  {
+    name: "健康診断",
+    pattern: "健康診断",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "203",
+    counterAccountName: "クレジットカード",
+    confidence: 0.95,
+    note: "定期健康診断・法定健診",
+  },
+  {
+    name: "人間ドック",
+    pattern: "人間ドック",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "203",
+    counterAccountName: "クレジットカード",
+    confidence: 0.95,
+  },
+  {
+    name: "フィットネス",
+    pattern: "フィットネス",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "203",
+    counterAccountName: "クレジットカード",
+    confidence: 0.8,
+    note: "法人契約のフィットネスクラブ",
+  },
+  {
+    name: "スポーツジム",
+    pattern: "スポーツジム",
+    matchType: "contains",
+    accountCode: "530",
+    accountName: "福利厚生費",
+    counterAccountCode: "203",
+    counterAccountName: "クレジットカード",
+    confidence: 0.8,
+    note: "法人契約のスポーツジム",
+  },
+];

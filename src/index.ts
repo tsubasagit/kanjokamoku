@@ -12,8 +12,16 @@
 export { ACCOUNTS, getAccountByCode, getAccountByName, getExpenseAccounts } from "./accounts";
 export type { Account } from "./accounts";
 
-export { ALL_RULES, SAAS_RULES, TELECOM_RULES, TRANSPORT_RULES, DINING_RULES, SUPPLIES_RULES, FEE_RULES, UTILITY_RULES, LEARNING_RULES, SHIPPING_RULES } from "./rules";
-export type { ClassificationRule } from "./rules";
+export {
+  ALL_RULES,
+  SAAS_RULES, TELECOM_RULES, TRANSPORT_RULES, DINING_RULES,
+  SUPPLIES_RULES, FEE_RULES, UTILITY_RULES, LEARNING_RULES, SHIPPING_RULES,
+  ACCOMMODATION_RULES, ADVERTISING_RULES, INSURANCE_RULES,
+  OFFICE_SPACE_RULES, WEB_INFRA_RULES, PROFESSIONAL_RULES,
+  TAX_FEE_RULES, MAINTENANCE_RULES, LEASING_RULES,
+  CONVENIENCE_RULES, SUBSCRIPTION_RULES, WELFARE_RULES,
+} from "./rules/index";
+export type { ClassificationRule } from "./rules/index";
 
 export { classify } from "./classify";
 export type { ClassificationResult } from "./classify";

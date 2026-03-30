@@ -18,10 +18,11 @@ Every accounting software in Japan (freee, MoneyForward, TKC, Yayoi) has auto-cl
 This library changes that. It provides:
 
 - A standard **chart of accounts** (勘定科目マスタ) for Japanese SMBs
-- **70+ vendor-to-account mapping rules** (取引先→科目の自動判定ルール)
+- **500+ vendor-to-account mapping rules** across 21 categories (取引先→科目の自動判定ルール)
 - A **classification engine** with exact/partial/regex matching
 - **Dining expense logic** — the famous ¥5,000/person rule (接待交際費 vs 会議費)
 - **Consumption tax handling** — standard 10% and reduced 8% rates
+- **Regional coverage** — electricity, gas, railway companies across Japan
 
 ## Install / インストール
 
@@ -55,53 +56,47 @@ const expenses = getExpenseAccounts();
 // → [{code: "511", name: "旅費交通費", ...}, ...]
 ```
 
-## Classification Rules / 判定ルール一覧
+## Rule Categories / 判定ルール一覧 (513 rules across 21 categories)
 
-### SaaS / Cloud Services → 通信費 (Communication)
+| # | Category | File | Rules | Account |
+|---|---|---|---|---|
+| 1 | SaaS / Cloud | `saas.ts` | 71 | 512 通信費 |
+| 2 | Telecom / ISP | `telecom.ts` | 21 | 512 通信費 |
+| 3 | Transport | `transport.ts` | 55 | 511 旅費交通費 |
+| 4 | Dining | `dining.ts` | 67 | 515 会議費 / 514 接待交際費 |
+| 5 | Supplies | `supplies.ts` | 33 | 513 消耗品費 |
+| 6 | Fees | `fees.ts` | 17 | 517 支払手数料 |
+| 7 | Utilities | `utilities.ts` | 25 | 520 水道光熱費 |
+| 8 | Books & Learning | `learning.ts` | 27 | 516 新聞図書費 / 527 研修費 |
+| 9 | Shipping | `shipping.ts` | 14 | 533 荷造運賃 |
+| 10 | Accommodation | `accommodation.ts` | 22 | 511 旅費交通費 |
+| 11 | Advertising | `advertising.ts` | 22 | 521 広告宣伝費 |
+| 12 | Insurance | `insurance.ts` | 17 | 525 保険料 |
+| 13 | Office Space | `office-space.ts` | 12 | 519 地代家賃 |
+| 14 | Web Infrastructure | `web-infra.ts` | 18 | 512 通信費 |
+| 15 | Professional Services | `professional.ts` | 23 | 517 支払手数料 / 518 外注費 |
+| 16 | Tax & Government | `tax-fees.ts` | 12 | 524 租税公課 |
+| 17 | Maintenance | `maintenance.ts` | 10 | 518 外注費 / 532 修繕費 |
+| 18 | Leasing | `leasing.ts` | 9 | 531 リース料 |
+| 19 | Convenience Stores | `convenience.ts` | 6 | 513 消耗品費 (multi-category) |
+| 20 | Subscriptions | `subscription.ts` | 21 | 512 通信費 |
+| 21 | Welfare | `welfare.ts` | 11 | 530 福利厚生費 |
 
-| Vendor | Account | Confidence |
-|---|---|---|
-| AWS / Amazon Web Services | 512 通信費 | 95% |
-| Google Cloud / Workspace | 512 通信費 | 95% |
-| Microsoft Azure / 365 | 512 通信費 | 90-95% |
-| Vercel, Firebase, Heroku | 512 通信費 | 95% |
-| Slack, Notion, Zoom | 512 通信費 | 95% |
-| GitHub, OpenAI, Anthropic | 512 通信費 | 95% |
+### Highlights / 主要ルールのハイライト
 
-### Transportation → 旅費交通費 (Travel & Transport)
+**SaaS (71 rules):** AWS, Google Cloud, Azure, Vercel, Firebase, Slack, Notion, Zoom, GitHub, Figma, Salesforce, HubSpot, SmartHR, OpenAI, Anthropic, Datadog, Sentry, and 50+ more
 
-| Vendor | Account | Confidence |
-|---|---|---|
-| JR, ANA, JAL | 511 旅費交通費 | 90% |
-| Taxi (日本交通 etc.) | 511 旅費交通費 | 95% |
-| Gas stations (ENEOS, 出光) | 511 旅費交通費 | 90% |
-| ETC (highway toll) | 511 旅費交通費 | 95% |
-| Parking (Times etc.) | 511 旅費交通費 | 90% |
+**Transport (55 rules):** JR全社, 私鉄14社(東急/小田急/京王/阪急...), タクシー(GO/DiDi), 航空7社(ANA/JAL/Peach...), ガソリン7社, ETC, レンタカー4社, シェアサイクル
 
-### Dining → 会議費 or 接待交際費 (Meeting / Entertainment)
+**Dining (67 rules):** カフェ10社, ファストフード7社, 牛丼/定食7社, ラーメン5社, 寿司5社, 居酒屋9社, ファミレス8社, 焼肉4社, デリバリー5社 — with ¥5,000/person rule
 
-| Vendor | Default | Note |
-|---|---|---|
-| Starbucks, Doutor, Tully's | 515 会議費 | Low-cost cafe → meeting expense |
-| McDonald's, Mister Donut | 515 会議費 | Fast food → meeting expense |
-| Restaurants (izakaya etc.) | 514 接待交際費 | Judged by ¥5,000/person rule |
+**Utilities (25 rules):** 全国電力10社 + 新電力5社, ガス5社, 水道局
 
 **The ¥5,000 Rule (5,000円ルール):**
 - ≤ ¥5,000 per person → 会議費 (meeting expense, fully deductible)
 - \> ¥5,000 per person → 接待交際費 (entertainment, limited deduction)
 
-### Supplies → 消耗品費 (Consumables)
-
-| Vendor | Account | Confidence |
-|---|---|---|
-| Yodobashi Camera | 513 消耗品費 | 85% |
-| Bic Camera | 513 消耗品費 | 85% |
-| Daiso, MonotaRO | 513 消耗品費 | 85-90% |
-| Amazon | 513 消耗品費 | 60% ⚠️ |
-
-> ⚠️ Amazon has low confidence because purchases could be books (新聞図書費), SaaS (通信費), or supplies (消耗品費). Item-level classification is needed.
-
-### Full Category Coverage / 対応科目一覧
+### Full Account Coverage / 対応勘定科目
 
 | Code | Japanese | English | Tax |
 |---|---|---|---|
@@ -121,6 +116,9 @@ const expenses = getExpenseAccounts();
 | 524 | 租税公課 | Tax & Public Charges | Non-taxable |
 | 525 | 保険料 | Insurance | Exempt |
 | 527 | 研修費 | Training & Education | 10% |
+| 530 | 福利厚生費 | Welfare Benefits | 10% |
+| 531 | リース料 | Leasing | 10% |
+| 532 | 修繕費 | Repair & Maintenance | 10% |
 | 533 | 荷造運賃 | Shipping & Delivery | 10% |
 
 ## Custom Rules / カスタムルール

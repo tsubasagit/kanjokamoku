@@ -7,7 +7,7 @@
  * @license MIT
  */
 
-import { ALL_RULES, ClassificationRule } from "./rules";
+import { ALL_RULES, ClassificationRule } from "./rules/index";
 import { Account, ACCOUNTS } from "./accounts";
 
 export interface ClassificationResult {
