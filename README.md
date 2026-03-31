@@ -11,7 +11,9 @@
 **日本の勘定科目マスタと自動仕訳判定ルールのOSSライブラリ。**
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/kanjokamoku.svg)](https://www.npmjs.com/package/kanjokamoku)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![Rules](https://img.shields.io/badge/rules-513+-green.svg)](src/rules/)
+[![Accounts](https://img.shields.io/badge/accounts-113-green.svg)](src/accounts.ts)
 
 ---
 
@@ -26,7 +28,7 @@ This library changes that. It provides:
 - A standard **chart of accounts** (勘定科目マスタ) for Japanese SMBs
 - **500+ vendor-to-account mapping rules** across 21 categories (取引先→科目の自動判定ルール)
 - A **classification engine** with exact/partial/regex matching
-- **Dining expense logic** — the famous ¥5,000/person rule (接待交際費 vs 会議費)
+- **Dining expense logic** — the ¥10,000/person rule (2024 revision, 接待交際費 vs 会議費)
 - **Consumption tax handling** — standard 10% and reduced 8% rates
 - **Regional coverage** — electricity, gas, railway companies across Japan
 
@@ -39,27 +41,30 @@ npm install kanjokamoku
 ## Quick Start / 使い方
 
 ```typescript
-import { classify, ACCOUNTS } from "kanjokamoku";
+import { classify, TAX_CONSTANTS } from "kanjokamoku";
 
-// Classify by vendor name / 取引先名から勘定科目を推定
+// 取引先名から勘定科目を推定 / Classify by vendor name
 const result = classify("スターバックス");
-console.log(result.account.name);  // "会議費"
-console.log(result.confidence);     // 0.85
+console.log(result.account.name);        // "会議費"
+console.log(result.consumptionTaxClass); // "課税仕入10%"（店内飲食の場合）
+console.log(result.invoiceRequired);     // true
 
-// With amount for dining rule / 金額で接待交際費 vs 会議費を判定
-const dinner = classify("道とん堀", 14360, 3);
-console.log(dinner.account.name);  // "接待交際費"
-console.log(dinner.note);          // "1人あたり4,787円（3名）→ 5,000円以下のため会議費"
-// Wait — ¥14,360 ÷ 3 = ¥4,787 → actually 会議費!
+// 士業への支払い → 源泉徴収情報が自動付与
+const legal = classify("弁護士法人");
+console.log(legal.withholding?.required); // true
+console.log(legal.withholding?.rate);     // 10.21
+console.log(legal.withholding?.basis);    // "所得税法204条1項2号"
 
-const dinner2 = classify("道とん堀", 14360, 2);
-console.log(dinner2.account.name); // "接待交際費"
-// ¥14,360 ÷ 2 = ¥7,180 → over ¥5,000/person → 接待交際費
+// 飲食費の判定（2024年4月改正: 1人1万円基準）
+const dinner = classify("叙々苑", 45000, 3);
+console.log(dinner.account.name);  // "接待交際費"（15,000円/人 > 10,000円）
 
-// List all expense accounts / 費用科目の一覧
-import { getExpenseAccounts } from "kanjokamoku";
-const expenses = getExpenseAccounts();
-// → [{code: "511", name: "旅費交通費", ...}, ...]
+const cafe = classify("スターバックス", 3200, 2);
+console.log(cafe.account.name);    // "会議費"（1,600円/人 ≤ 10,000円）
+
+// 税務定数の参照
+console.log(TAX_CONSTANTS.diningPerPersonThreshold);  // 10000
+console.log(TAX_CONSTANTS.entertainmentDeductionLimit); // 8000000
 ```
 
 ## Rule Categories / 判定ルール一覧 (513 rules across 21 categories)
@@ -94,38 +99,32 @@ const expenses = getExpenseAccounts();
 
 **Transport (55 rules):** JR全社, 私鉄14社(東急/小田急/京王/阪急...), タクシー(GO/DiDi), 航空7社(ANA/JAL/Peach...), ガソリン7社, ETC, レンタカー4社, シェアサイクル
 
-**Dining (67 rules):** カフェ10社, ファストフード7社, 牛丼/定食7社, ラーメン5社, 寿司5社, 居酒屋9社, ファミレス8社, 焼肉4社, デリバリー5社 — with ¥5,000/person rule
+**Dining (67 rules):** カフェ10社, ファストフード7社, 牛丼/定食7社, ラーメン5社, 寿司5社, 居酒屋9社, ファミレス8社, 焼肉4社, デリバリー5社 — with ¥10,000/person rule
 
 **Utilities (25 rules):** 全国電力10社 + 新電力5社, ガス5社, 水道局
 
-**The ¥5,000 Rule (5,000円ルール):**
-- ≤ ¥5,000 per person → 会議費 (meeting expense, fully deductible)
-- \> ¥5,000 per person → 接待交際費 (entertainment, limited deduction)
+**The ¥10,000 Rule (1万円ルール / 2024年4月改正):**
+- ≤ ¥10,000 per person → 会議費 (meeting expense, fully deductible)
+- \> ¥10,000 per person → 接待交際費 (entertainment, ¥8M annual limit for SMEs)
+- 要件: 日時・参加者名・人数・金額・店名の帳簿記載が必要（措法61の4③二）
 
-### Full Account Coverage / 対応勘定科目
+### Full Account Coverage / 勘定科目マスタ（113科目）
 
-| Code | Japanese | English | Tax |
-|---|---|---|---|
-| 511 | 旅費交通費 | Travel & Transport | 10% |
-| 512 | 通信費 | Communication & SaaS | 10% |
-| 513 | 消耗品費 | Supplies & Equipment | 10% |
-| 514 | 接待交際費 | Entertainment | 10% |
-| 515 | 会議費 | Meeting Expenses | 10% |
-| 516 | 新聞図書費 | Books & Publications | 10% |
-| 517 | 支払手数料 | Service Fees | 10% |
-| 518 | 外注費 | Outsourcing | 10% |
-| 519 | 地代家賃 | Rent | 10% |
-| 520 | 水道光熱費 | Utilities | 10% |
-| 521 | 広告宣伝費 | Advertising | 10% |
-| 522 | 諸会費 | Membership Dues | Non-taxable |
-| 523 | 雑費 | Miscellaneous | 10% |
-| 524 | 租税公課 | Tax & Public Charges | Non-taxable |
-| 525 | 保険料 | Insurance | Exempt |
-| 527 | 研修費 | Training & Education | 10% |
-| 530 | 福利厚生費 | Welfare Benefits | 10% |
-| 531 | リース料 | Leasing | 10% |
-| 532 | 修繕費 | Repair & Maintenance | 10% |
-| 533 | 荷造運賃 | Shipping & Delivery | 10% |
+| 区分 | 科目数 | 主な科目 |
+|---|---|---|
+| **資産（流動）** | 22 | 現金, 普通預金, 売掛金, 前払費用, 仮払金, 仮払消費税, 商品, 有価証券 等 |
+| **資産（固定・有形）** | 9 | 建物, 建物附属設備, 車両運搬具, 工具器具備品, 土地 等 |
+| **資産（固定・無形）** | 7 | ソフトウェア, 特許権, 商標権, のれん, 借地権 等 |
+| **資産（投資・繰延）** | 11 | 投資有価証券, 敷金保証金, 創立費, 開業費 等 |
+| **負債（流動）** | 15 | 買掛金, 未払金, クレジットカード, 預り金, 未払法人税等, 前受金 等 |
+| **負債（固定）** | 6 | 長期借入金, 社債, 退職給付引当金, 資産除去債務 等 |
+| **純資産** | 10 | 資本金, 資本剰余金, 利益剰余金, 自己株式, 元入金, 事業主貸/借 等 |
+| **収益** | 16 | 売上高, 受取利息, 受取配当金, 補助金収入, 固定資産売却益 等 |
+| **費用（売上原価）** | 8 | 仕入高, 材料費, 労務費, 製造経費 等 |
+| **費用（販管費）** | 29 | 旅費交通費, 通信費, 接待交際費, 給料手当, 減価償却費, 採用費 等 |
+| **費用（営業外・特別・税）** | 12 | 支払利息, 貸倒損失, 固定資産除却損, 法人税等 等 |
+
+全科目に税理士向け「目安」付き解説を記載。詳細は [`src/accounts.ts`](src/accounts.ts) を参照。
 
 ## Custom Rules / カスタムルール
 

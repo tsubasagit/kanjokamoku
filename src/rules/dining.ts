@@ -12,7 +12,7 @@ export const DINING_RULES: ClassificationRule[] = [
   // ----------------------------------------------------------
   // カフェチェーン → 会議費(515)
   // ----------------------------------------------------------
-  { name: "スターバックス", pattern: "スターバックス", matchType: "contains", accountCode: "515", accountName: "会議費", counterAccountCode: "101", counterAccountName: "現金", confidence: 0.85, note: "テイクアウト8%・店内10%。少額のため会議費が一般的", consumptionTaxClass: "課税仕入10%", invoiceRequired: true },
+  { name: "スターバックス", pattern: "スターバックス", matchType: "contains", accountCode: "515", accountName: "会議費", counterAccountCode: "101", counterAccountName: "現金", confidence: 0.85, note: "テイクアウト8%・店内10%。レシートの税率表記で確認", consumptionTaxClass: "課税仕入10%", taxNotes: ["テイクアウト8%・店内飲食10%。レシートの税率表記で確認が必要"], invoiceRequired: true },
   { name: "ドトール", pattern: "ドトール", matchType: "contains", accountCode: "515", accountName: "会議費", counterAccountCode: "101", counterAccountName: "現金", confidence: 0.85, consumptionTaxClass: "課税仕入10%", invoiceRequired: true },
   { name: "タリーズ", pattern: "タリーズ", matchType: "contains", accountCode: "515", accountName: "会議費", counterAccountCode: "101", counterAccountName: "現金", confidence: 0.85, consumptionTaxClass: "課税仕入10%", invoiceRequired: true },
   { name: "コメダ珈琲", pattern: "コメダ", matchType: "contains", accountCode: "515", accountName: "会議費", counterAccountCode: "101", counterAccountName: "現金", confidence: 0.85, consumptionTaxClass: "課税仕入10%", invoiceRequired: true },
