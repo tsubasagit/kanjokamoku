@@ -184,6 +184,12 @@ npm install
 npm run build
 ```
 
+## Disclaimer / 免責事項
+
+**免責事項**: 本ライブラリは一般的な勘定科目の分類ルールを提供するものであり、個別の税務判断を行うものではありません。実際の仕訳・申告にあたっては、税理士等の専門家にご相談ください。本ライブラリの利用により生じたいかなる損害についても、作者は責任を負いません。
+
+**Disclaimer**: This library provides general classification rules for Japanese chart of accounts. It does not constitute tax advice. Please consult a qualified tax professional for actual bookkeeping and tax filing decisions. The authors assume no liability for any damages arising from the use of this library.
+
 ## License
 
 MIT — Use it freely in commercial and open-source projects.
