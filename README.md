@@ -163,9 +163,9 @@ The classification results can be exported to CSV formats compatible with:
 
 ## Background / 背景
 
-This library was born from [AutoBooks](https://github.com/tsubasagit/AppTalentHub), an AI-powered bookkeeping agent for Japanese tax accountants. We realized the classification rules themselves should be open — so anyone building accounting tools in Japan can use them.
+We build accounting automation tools at [AppTalentHub](https://apptalenthub.co.jp) and realized that classification rules should be open — so anyone building accounting tools in Japan can use them.
 
-このライブラリは、税理士向けAI仕訳エージェント [AutoBooks](https://github.com/tsubasagit/AppTalentHub) から生まれました。仕訳の判定ルール自体はオープンであるべきだと考え、日本で会計ツールを開発する全ての人が使えるようOSSとして公開しました。
+会計自動化ツールを開発する中で、仕訳の判定ルール自体はオープンであるべきだと考えました。日本で会計ツールを開発する全ての人が使えるようOSSとして公開しています。
 
 ## Contributing / コントリビューション
 
